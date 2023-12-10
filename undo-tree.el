@@ -3284,6 +3284,10 @@ without asking for confirmation."
 	    (t (error "Unknown `undo-tree-save-format-version'; undo-tree history *not* saved")))
 	  ;; write file
 	  (with-auto-compression-mode
+        ;; workaround for corrupted serialise function
+        ;; but it causes primitive error on invisible region
+        (setf sanitised (replace-regexp-in-string "#<marker in no buffer>"  "" (buffer-string)))
+        (setf (buffer-string) sanitised)
 	    (write-region nil nil filename)))))))
 
 

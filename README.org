@@ -1,0 +1,9 @@
+* undo-tree
+A yet another fork from https://gitlab.com/tsc25/undo-tree
+
+** Difference from the upstream
+- Collaboration is allowed via Github issues and pull requests.
+- Fixed corruption issues.
+
+** Installation
+(package-vc-install "https://github.com/kohnish/undo-tree.git")
