@@ -3477,14 +3477,13 @@ Note this will overwrite any existing undo history."
 	    (t (error "Error"))))
 
 	  ;; check hash
-	  (undo-tree--catch-load-history-error
-	    "Buffer has been modified since undo-tree history was saved to
-	  \"%s\"; could not load undo-tree history"
-	    (unless (string= (sha1 buff) hash) (error "Error")))
+	  ;; (undo-tree--catch-load-history-error
+	  ;;   "Buffer has been modified since undo-tree history was saved"
+	  ;;   (unless (string= (sha1 buff) hash) (error "Error")))
 
 	  ;; read tree
 	  (undo-tree--catch-load-history-error
-	   "Error reading undo-tree history from \"%s\""
+	   "Error reading undo-tree history"
 	   (setq tree
 		 (cl-case version
 		   (0 (undo-tree-deserialize-old-format))
