@@ -3525,7 +3525,6 @@ Note this will overwrite any existing undo history."
 
 ;; install history-auto-save hooks
 (add-hook 'write-file-functions #'undo-tree-save-history-from-hook)
-(add-hook 'kill-buffer-hook #'undo-tree-save-history-from-hook)
 (add-hook 'find-file-hook #'undo-tree-load-history-from-hook)
 
 
